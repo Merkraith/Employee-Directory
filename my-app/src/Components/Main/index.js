@@ -72,7 +72,7 @@ class Main extends React.Component {
         console.log(this.state.employees);
         return(
             <div className="employeefile">
-                <h1>Employee Directory</h1>
+                
             
             <EmployeeSearchForm
                 employees={this.state.employees}
