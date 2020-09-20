@@ -18,15 +18,16 @@ function EmployeeSearchResults(props) {
                 </thead>
                 {props.employees.map(employee => (
                     <tbody key={employee} className="list-group-item">
-                        
-                            <tr>
-                                <h1>{employee.name.super} </h1>
-                            </tr>
-                            <tr> <img alt="employee-pic" src={employee.picture.medium} className="img-fluid" /></tr>
-                            <tr>
-                                <h2>{employee.name.first}  {employee.name.last}</h2>
-                            </tr>
-                        
+
+                        <tr>
+                            <h2>{employee.name.first}  {employee.name.last}</h2>
+
+                        </tr>
+                        <tr> <img alt="employee-pic" src={employee.picture.medium} className="img-fluid" /></tr>
+                        <tr>
+                            <h1>{employee.name.super} </h1>
+                        </tr>
+
                     </tbody>
                 ))}
             </table>
