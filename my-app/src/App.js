@@ -1,7 +1,7 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Container from 'react-bootstrap/Container'
-
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+import Main from './Components/Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -11,15 +11,14 @@ function App() {
     <div>
       <Jumbotron fluid>
         <Container>
-          <h1>Emloyee Directory</h1>
+          <h1>Avengers Roster</h1>
           <h2>
-            Search for Employees in the directory
+            Search the roster of Avengers
           </h2>
         </Container>
       </Jumbotron>
       <Container>
-
-        
+        <Main/>
       </Container>
     </div>
   );
