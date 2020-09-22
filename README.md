@@ -3,8 +3,7 @@
 
 [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
 
-[![Generic badge](https://img.shields.io/badge/<MADE WITH>-<REACT>-<Blue>.svg)](https://shields.io/)
-
+[![React!](/Built with _ React.png)
 
 # Employee-Directory (Avengers Roster)
 
