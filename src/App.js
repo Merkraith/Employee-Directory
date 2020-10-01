@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="roster">
       <Jumbotron fluid>
         <Container>
           <h1>Avengers Roster</h1>
