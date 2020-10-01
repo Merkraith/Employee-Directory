@@ -3,7 +3,7 @@
 
 [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
 
-![BuiltwithReact](/react.png)
+![react](/react.png)
 
 # Employee-Directory (Avengers Roster)
 
