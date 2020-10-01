@@ -5,8 +5,6 @@ import API from "../../utils/api";
 import EmployeeSearchForm from '../EmployeeSearchForm';
 import EmployeeSearchResults from '../EmployeeSearchResults';
 
-
-
 class Main extends React.Component {
 
     constructor(props) {
@@ -16,24 +14,23 @@ class Main extends React.Component {
             sortAvenger: "desc",
             results: [],
             employees: [],
-            // sortType: "asc",
             filtered: [],
             error: null
         };
 
     }
-    
+
     componentDidMount() {
         API.searchForm()
-        .then(res => this.setState({ employees: res.data.results, filtered: res.data.results }))
-        .catch(err => console.log(err));
+            .then(res => this.setState({ employees: res.data.results, filtered: res.data.results }))
+            .catch(err => console.log(err));
     }
 
     handleInputChange = event => {
         let currentList = [];
         let newList = [];
 
-        if (event.target.value !== ""){
+        if (event.target.value !== "") {
             currentList = this.state.employees;
 
             newList = currentList.filter(employee => {
@@ -43,10 +40,10 @@ class Main extends React.Component {
             });
         } else {
             newList = this.state.employees;
-        } 
-            this.setState({
-                filtered: newList
-            });
+        }
+        this.setState({
+            filtered: newList
+        });
     }
 
     handleFormSubmit = event => {
@@ -54,37 +51,34 @@ class Main extends React.Component {
         this.searchForm(this.state.search);
     }
 
-    onSort = sortAvenger =>{
-        this.setState({sortAvenger})
+    onSort = sortAvenger => {
+        this.setState({ sortAvenger })
     }
 
-    onChange = e =>{
-        this.setState({ search : e.target.value });
+    onChange = e => {
+        this.setState({ search: e.target.value });
     }
 
     render() {
-        const {employees, sortAvenger } = this.state;
+        const { employees, sortAvenger } = this.state;
         const sorted = employees.sort((a, b) => {
             const isReversed = (sortAvenger === 'asc') ? 1 : -1;
             return isReversed * a.name.first.localeCompare(b.name.first)
         });
 
-        console.log(this.state.employees);
-        return(
-            <div className="employeefile">
-                
-            
-            <EmployeeSearchForm
-                employees={this.state.employees}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-            />
-            <EmployeeSearchResults 
-            employees={this.state.filtered} 
-            onSort={this.onSort}
-            sortType={sorted}
-            />
-
+        
+        return (
+            <div>
+                <EmployeeSearchForm
+                    employees={this.state.employees}
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                />
+                <EmployeeSearchResults
+                    employees={this.state.filtered}
+                    onSort={this.onSort}
+                    sortType={sorted}
+                />
             </div>
         );
     }
